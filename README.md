@@ -18,4 +18,4 @@ Akashic Engine向けではありますが、特に利用に制限はないので
 
 |名前|解説|備考|
 |----|----|----|
-|[株式会社東雲火山](https://shinonomekazan.com/)|本Repository全体のスポンサーです||
+|[株式会社東雲火山](https://shinonomekazan.com/)|本Repository全体のスポンサーです。[汎用素材](./common)等を作成しています|

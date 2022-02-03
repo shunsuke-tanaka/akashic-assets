@@ -14,8 +14,14 @@ Akashic Engine向けではありますが、特に利用に制限はないので
 
 ソースコードはMIT License の元で公開されています。詳しくは [LICENSE](./LICENSE) をご覧ください。
 
+## 素材カタログ
+
+- [シルエット](./silhouette/README.md)
+- [汎用素材](./common/README.md)
+
 ## 各素材の制作者
 
 |名前|解説|備考|
 |----|----|----|
-|[株式会社東雲火山](https://shinonomekazan.com/)|本Repository全体のスポンサーです。[汎用素材](./common)等を作成しています|
+|[株式会社東雲火山](https://shinonomekazan.com/)|本Repository全体のスポンサーです。[汎用素材](./common)等を作成しています||
+|（フリーのデザイナー: 公開情報確認中）|[シルエット](./silhouette)等を作成しています||

@@ -1,23 +1,26 @@
 # 男性シルエット
 
-## カタログ
+## 男性
 
-|No|ファイル名|解説|
-|----|----|---|
-|1|[standing.png](./standing.png)|男性|
-|2|[standing2.png](./standing2.png)|体格のいい男性|
-|3|[scratching-head.png](./scratching-head.png)|頭をかく男性|
-|4|[bag.png](./bag.png)|かばんを持った男性|
-|5|[look-up.png](./look-up.png)|上を見上げる男性|
+![通常](./standing.png)
+![透過80%](./alpha80/standing.png)
 
-## バリエーション
+## 体格のいい男性
 
-### うっすら透過（0.8）
+![体格のいい男性](./standing2.png)
+![透過80%](./alpha80/standing2.png)
 
-|No|ファイル名|解説|
-|----|----|---|
-|1|[standing.png](./alpha80/standing.png)|男性|
-|2|[standing2.png](./alpha80/standing2.png)|体格のいい男性|
-|3|[scratching-head.png](./alpha80/scratching-head.png)|頭をかく男性|
-|4|[bag.png](./alpha80/bag.png)|かばんを持った男性|
-|5|[look-up.png](./alpha80/look-up.png)|上を見上げる男性|
+## 頭をかく男性
+
+![頭をかく男性](./scratching-head.png)
+![透過80%](./alpha80/scratching-head.png)
+
+## かばんを持った男性
+
+![かばんを持った男性](./bag.png)
+![透過80%](./alpha80/bag.png)
+
+## 上を見上げる男性
+
+![上を見上げる男性](./look-up.png)
+![透過80%](./alpha80/look-up.png)

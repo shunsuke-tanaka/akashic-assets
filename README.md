@@ -2,7 +2,7 @@
 
 ## 本Repositoryについて
 
-`akashic-assets` は、主に[Akashic Engine](https://akashic-games.github.io/)で作成するゲーム開発のための素材を後悔するためのRepositoryです。
+`akashic-assets` は、主に[Akashic Engine](https://akashic-games.github.io/)で作成するゲーム開発のための素材を公開するためのRepositoryです。
 
 Akashic Engine向けではありますが、特に利用に制限はないので、ライセンスのご参照の上、問題なければご自由にご利用ください。
 

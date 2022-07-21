@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		div.btnContainer {
+			display: inline-block;
+			position: relative;
+			/* text-align: center; */
+		}
+
+		p {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			user-select: none;
+			text-align: center;
+			font-size: 30px;
+			margin: 0px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="buttons">
+		<div id="smallButtons">
+		</div>
+		<div id="middleButtons">
+		</div>
+	</div>
+</body>
+<script>
+	// let num = 1;
+	const buttonCanvas = [];
+	const buttonPushed = [];
+	const buttonsDiv = document.getElementById("buttons");
+	const smallBtnsDiv = document.getElementById("smallButtons");
+	const middleBtnsDiv = document.getElementById("middleButtons");
+
+	function buttonInit() {
+		for (let i = 0; i < 22; i++) {
+			const btnDiv = document.createElement("div");
+			const newCanvas = document.createElement("canvas");
+			btnDiv.className = "btnContainer";
+			btnDiv.appendChild(newCanvas);
+
+			if (i < 6) {
+				smallBtnsDiv.appendChild(btnDiv);
+			}
+			else if (i >= 6) {
+				const newText = document.createElement("p");
+				newText.textContent = "ボタン";
+				btnDiv.appendChild(newText);
+				middleBtnsDiv.appendChild(btnDiv);
+			}
+			buttonCanvas.push(newCanvas);
+			buttonPushed.push(false);
+		}
+	}
+
+	function createSmallBtn(num) {
+		const newCanvas = buttonCanvas[num];
+		const ctx = newCanvas.getContext('2d');
+		if (buttonPushed[num]) num = num * 2 + 1;
+		else num = num * 2;
+		let image = new Image();
+		image.src = "buttons.png";
+		image.onload = function () {
+			const indexW = image.width / 12;
+			const imageH = image.height;
+			newCanvas.width = 50;
+			newCanvas.height = 80;
+			const x = newCanvas.width / 2 - indexW / 2;
+			ctx.drawImage(image, indexW * (num), 0, indexW, imageH, x, 0, indexW, imageH);
+		}
+	}
+	function createMiddleBtn(num) {
+		const newCanvas = buttonCanvas[num];
+		const ctx = newCanvas.getContext('2d');
+		let image = new Image();
+		const pushed = buttonPushed[num] ? "on" : "off";
+		const img = `Buttons-main/btn${num + 1 - 6}${pushed}.png`;
+		image.src = img;
+		image.onload = function () {
+			const imageW = image.width;
+			const imageH = image.height;
+			newCanvas.width = 400;
+			newCanvas.height = 120;
+			const x = newCanvas.width / 2 - imageW / 2;
+			const y = newCanvas.height / 2 - imageH / 2;
+			ctx.drawImage(image, x, y, imageW, imageH);
+		}
+	}
+	function dispButtons() {
+		for (let i = 0; i < 22; i++) {
+			if (i < 6) {
+				createSmallBtn(i);
+			} else {
+				createMiddleBtn(i);
+			}
+		}
+	}
+	buttonInit();
+	dispButtons();
+	function click() {
+		buttonCanvases = document.getElementsByTagName("canvas");
+		for (let i = 0; i <= buttonCanvases.length; i++) {
+			buttonCanvases[i].addEventListener('click', function () {
+				if (buttonPushed[i]) buttonPushed[i] = false;
+				else buttonPushed[i] = true;
+				if (i < 6) {
+					createSmallBtn(i);
+				} else {
+					createMiddleBtn(i);
+				}
+			});
+		}
+	}
+	click();
+</script>
+
+</html>

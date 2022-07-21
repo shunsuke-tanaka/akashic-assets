@@ -82,13 +82,16 @@
 		dispButtons();
 		function click() {
 			buttonCanvases = document.getElementsByTagName("canvas");
+
 			for (let i = 0; i < buttonCanvases.length; i++) {
+				window.addEventListener('mouseup', function () {
+					if (buttonPushed[i] === true) {
+						buttonPushed[i] = false;
+						createMiddleBtn(i);
+					}
+				});
 				buttonCanvases[i].addEventListener('mousedown', function () {
 					buttonPushed[i] = true;
-					createMiddleBtn(i);
-				});
-				buttonCanvases[i].addEventListener('mouseup', function () {
-					buttonPushed[i] = false;
 					createMiddleBtn(i);
 				});
 			}

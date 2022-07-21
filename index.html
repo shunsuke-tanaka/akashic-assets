@@ -29,100 +29,75 @@
 
 <body>
 	<div id="buttons">
-		<div id="smallButtons">
-		</div>
-		<div id="middleButtons">
-		</div>
 	</div>
 </body>
 <script>
-	// let num = 1;
-	const buttonCanvas = [];
-	const buttonPushed = [];
-	const buttonsDiv = document.getElementById("buttons");
-	const smallBtnsDiv = document.getElementById("smallButtons");
-	const middleBtnsDiv = document.getElementById("middleButtons");
+	(function () {
 
-	function buttonInit() {
-		for (let i = 0; i < 22; i++) {
-			const btnDiv = document.createElement("div");
-			const newCanvas = document.createElement("canvas");
-			btnDiv.className = "btnContainer";
-			btnDiv.appendChild(newCanvas);
+		const buttonCanvas = [];
+		const buttonPushed = [];
+		const buttonsDiv = document.getElementById("buttons");
 
-			if (i < 6) {
-				smallBtnsDiv.appendChild(btnDiv);
-			}
-			else if (i >= 6) {
+		function buttonInit() {
+			for (let i = 0; i < 16; i++) {
+				const btnDiv = document.createElement("div");
+				const newCanvas = document.createElement("canvas");
+				btnDiv.className = "btnContainer";
+				btnDiv.appendChild(newCanvas);
+
 				const newText = document.createElement("p");
 				newText.textContent = "ボタン";
 				btnDiv.appendChild(newText);
-				middleBtnsDiv.appendChild(btnDiv);
-			}
-			buttonCanvas.push(newCanvas);
-			buttonPushed.push(false);
-		}
-	}
+				buttonsDiv.appendChild(btnDiv);
 
-	function createSmallBtn(num) {
-		const newCanvas = buttonCanvas[num];
-		const ctx = newCanvas.getContext('2d');
-		if (buttonPushed[num]) num = num * 2 + 1;
-		else num = num * 2;
-		let image = new Image();
-		image.src = "buttons.png";
-		image.onload = function () {
-			const indexW = image.width / 12;
-			const imageH = image.height;
-			newCanvas.width = 50;
-			newCanvas.height = 80;
-			const x = newCanvas.width / 2 - indexW / 2;
-			ctx.drawImage(image, indexW * (num), 0, indexW, imageH, x, 0, indexW, imageH);
-		}
-	}
-	function createMiddleBtn(num) {
-		const newCanvas = buttonCanvas[num];
-		const ctx = newCanvas.getContext('2d');
-		let image = new Image();
-		const pushed = buttonPushed[num] ? "on" : "off";
-		const img = `Buttons-main/btn${num + 1 - 6}${pushed}.png`;
-		image.src = img;
-		image.onload = function () {
-			const imageW = image.width;
-			const imageH = image.height;
-			newCanvas.width = 400;
-			newCanvas.height = 120;
-			const x = newCanvas.width / 2 - imageW / 2;
-			const y = newCanvas.height / 2 - imageH / 2;
-			ctx.drawImage(image, x, y, imageW, imageH);
-		}
-	}
-	function dispButtons() {
-		for (let i = 0; i < 22; i++) {
-			if (i < 6) {
-				createSmallBtn(i);
-			} else {
-				createMiddleBtn(i);
+				buttonCanvas.push(newCanvas);
+				buttonPushed.push(false);
 			}
 		}
-	}
-	buttonInit();
-	dispButtons();
-	function click() {
-		buttonCanvases = document.getElementsByTagName("canvas");
-		for (let i = 0; i <= buttonCanvases.length; i++) {
-			buttonCanvases[i].addEventListener('click', function () {
-				if (buttonPushed[i]) buttonPushed[i] = false;
-				else buttonPushed[i] = true;
-				if (i < 6) {
-					createSmallBtn(i);
-				} else {
-					createMiddleBtn(i);
-				}
-			});
+		function createMiddleBtn(num) {
+			const newCanvas = buttonCanvas[num];
+			const ctx = newCanvas.getContext('2d');
+			let image = new Image();
+			const pushed = buttonPushed[num] ? "on" : "off";
+			const img = `Buttons-main/btn${num + 1}${pushed}.png`;
+			image.src = img;
+			image.onload = function () {
+				const imageW = image.width;
+				const imageH = image.height;
+				newCanvas.width = 400;
+				newCanvas.height = 120;
+				const x = newCanvas.width / 2 - imageW / 2;
+				const y = newCanvas.height / 2 - imageH / 2;
+				ctx.drawImage(image, x, y, imageW, imageH);
+			}
 		}
-	}
-	click();
+		function dispButtons() {
+			buttonCanvases = document.getElementsByTagName("canvas");
+			for (let i = 0; i < buttonCanvases.length; i++) {
+				createMiddleBtn(i);
+
+			}
+		}
+		buttonInit();
+		dispButtons();
+		function click() {
+			buttonCanvases = document.getElementsByTagName("canvas");
+
+			for (let i = 0; i < buttonCanvases.length; i++) {
+				window.addEventListener('mouseup', function () {
+					if (buttonPushed[i] === true) {
+						buttonPushed[i] = false;
+						createMiddleBtn(i);
+					}
+				});
+				buttonCanvases[i].addEventListener('mousedown', function () {
+					buttonPushed[i] = true;
+					createMiddleBtn(i);
+				});
+			}
+		}
+		click();
+	})();
 </script>
 
 </html>

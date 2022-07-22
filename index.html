@@ -62,7 +62,6 @@
 				newText.textContent = "ボタン";
 				btnDiv.appendChild(newText);
 				buttonsDiv.appendChild(btnDiv);
-
 				buttonCanvas.push(newCanvas);
 				buttonPushed.push(false);
 
@@ -79,7 +78,6 @@
 			const x = newCanvas.width / 2 - imageW / 2;
 			const y = newCanvas.height / 2 - imageH / 2;
 			ctx.drawImage(images[num][pushed], x, y, imageW, imageH);
-
 		}
 		function dispButtons() {
 			buttonCanvases = document.getElementsByTagName("canvas");

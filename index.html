@@ -37,7 +37,6 @@
 		const buttonCanvas = [];
 		const buttonPushed = [];
 		const buttonsDiv = document.getElementById("buttons");
-
 		const images = [];
 		function imagePreLoad() {
 			for (let i = 0; i < 15; i++) {
@@ -63,8 +62,6 @@
 				newText.textContent = "ボタン";
 				btnDiv.appendChild(newText);
 				buttonsDiv.appendChild(btnDiv);
-
-
 				buttonCanvas.push(newCanvas);
 				buttonPushed.push(false);
 
@@ -81,14 +78,10 @@
 			const x = newCanvas.width / 2 - imageW / 2;
 			const y = newCanvas.height / 2 - imageH / 2;
 			ctx.drawImage(images[num][pushed], x, y, imageW, imageH);
-
-
-
 		}
 		function dispButtons() {
 			buttonCanvases = document.getElementsByTagName("canvas");
 			for (let i = 0; i < buttonCanvases.length; i++) {
-
 				const pushed = (buttonPushed[i] !== true) ? 0 : 1;
 				images[i][pushed].onload = function () {
 					createMiddleBtn(i, pushed);
@@ -112,12 +105,10 @@
 						buttonPushed[i] = false;
 						const pushed = (buttonPushed[i] !== true) ? 0 : 1;
 						createMiddleBtn(i, pushed);
-
 					}
 				});
 				buttonCanvases[i].addEventListener('mousedown', function () {
 					buttonPushed[i] = true;
-
 					const pushed = (buttonPushed[i] !== true) ? 0 : 1;
 					createMiddleBtn(i, pushed);
 				});
@@ -132,7 +123,6 @@
 		imagePreLoad()
 		buttonInit();
 		dispButtons();
-
 		click();
 	})();
 </script>

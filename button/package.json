@@ -1,5 +1,5 @@
 {
-  "name": "sample-animation-v3",
+  "name": "@akashic-assets/button",
   "private": true,
   "version": "0.1.0",
   "description": "",
@@ -9,8 +9,8 @@
     "test": "npm run lint"
   },
   "keywords": [],
-  "author": "",
-  "license": "",
+  "author": "Shinonomekazan Co., Ltd",
+  "license": "MIT",
   "devDependencies": {
     "@akashic/akashic-sandbox": "~0.16.18",
     "eslint": "7.7.0"

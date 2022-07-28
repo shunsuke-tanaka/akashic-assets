@@ -13,9 +13,6 @@ function main() {
 	});
 	g.game.pushScene(scene);
 }
-
-module.exports = main;
-
 function dispButton(scene, num) {
 	const width = 320;
 	const height = 120;
@@ -24,7 +21,7 @@ function dispButton(scene, num) {
 		scene: scene,
 		src: scene.asset.getImageById(`btn${num}off`),
 		x: width * ((num - 1) % rows),
-		y: height * parseInt((num - 1) / rows)
+		y: height * Math.floor((num - 1) / rows)
 	});
 	const textX = spriteOff.x + spriteOff.width / 2;
 	let textY = spriteOff.y + spriteOff.height / 2;
@@ -41,7 +38,7 @@ function dispButton(scene, num) {
 			scene: scene,
 			src: scene.asset.getImageById(`btn${num}on`),
 			x: width * ((num - 1) % rows),
-			y: height * parseInt((num - 1) / rows)
+			y: height * Math.floor((num - 1) / rows)
 		});
 		scene.append(spriteOn);
 		if (num === 13 || num === 14 || num === 15) textY += pushDepth;
@@ -51,7 +48,7 @@ function dispButton(scene, num) {
 	spriteOff.onPointUp.add(() => {
 		spriteOff.opacity = 1;
 		spriteOff.modified();
-		spriteOn.destroy();
+		if (spriteOn !== null) spriteOn.destroy();
 		text.destroy();
 		if (num === 13 || num === 14 || num === 15) textY -= pushDepth;
 		text = Text(scene, num, textX, textY);
@@ -84,3 +81,4 @@ function Text(scene, num, x, y) {
 	}
 	return label;
 }
+module.exports = main;

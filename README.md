@@ -17,6 +17,7 @@ Akashic Engine向けではありますが、特に利用に制限はないので
 ## 素材カタログ
 
 - [シルエット](./silhouette/README.md)
+- [背景](./bg/README.md)
 - [汎用素材](./common/README.md)
 
 ## 各素材の制作者

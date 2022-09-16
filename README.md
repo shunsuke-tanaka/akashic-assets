@@ -18,10 +18,14 @@ Akashic Engine向けではありますが、特に利用に制限はないので
 
 - [シルエット](./silhouette/README.md)
 - [背景](./bg/README.md)
+- [キャラクター](./characters/README.md)
+- [マップチップ](./chips/README.md)
+- [ボタン](./buttons/README.md)
 - [汎用素材](./common/README.md)
 
 ## 各素材の制作者
 
 |名前|解説|備考|
 |----|----|----|
-|[株式会社東雲火山](https://shinonomekazan.com/)|本Repository全体のスポンサーです。[汎用素材](./common)、[シルエット](./silhouette)等を作成しています||
+|[株式会社東雲火山](https://shinonomekazan.com/)|本Repository全体のスポンサーです。[汎用素材](./common)、[シルエット](./silhouette)、[背景](./bg/)等を作成しています||
+|本間|[キャラクター](./characters/)、[マップチップ](./chips/)、[ボタン](./buttons/)等を作成しています||

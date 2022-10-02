@@ -20,8 +20,35 @@ WOLF RPGエディター仕様のオートタイル画像です。
 
 ### 床
 
+床です。
+
 - ![石](./tile/tile1.png)
 - ![木](./tile/tile2.png)
+
+## ボタン
+
+踏んで動かすタイプのボタンです。
+
+- ![赤・四角](./buttons/btn_red1.png)
+- ![赤・丸](./buttons/btn_red2.png)
+- ![青・四角](./buttons/btn_blue1.png)
+- ![青・丸](./buttons/btn_blue2.png)
+- ![緑・四角](./buttons/btn_green1.png)
+- ![緑・丸](./buttons/btn_green2.png)
+
+## ドア
+
+ドアです。
+
+- ![木製ドア](./doors//door-wood.png)
+- ![金色のドア](./doors//door-gold.png)
+
+## 宝箱
+
+宝箱です。お宝が入っていたり、空だったり。
+
+- ![赤宝箱](./treasures/takarabako_red.png)
+- ![青宝箱](./treasures/takarabako_blue.png)
 
 ## 画像の合成について
 

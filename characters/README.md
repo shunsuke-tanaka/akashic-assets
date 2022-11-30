@@ -17,3 +17,7 @@ RPG等に利用される、ドット絵のキャラクター画像です。
 ### 犬
 
 ![犬](./character3.png)
+![もえる犬](./character4.png)
+![つめたい犬](./character5.png)
+![かがやく犬](./character6.png)
+![スペース犬](./character7.png)
